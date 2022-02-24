@@ -13,7 +13,7 @@ class Project extends Model
     public $timestamps = true;
 
     protected $casts = [
-        'cost' => 'float'
+        'age' => 'float'
     ];
 
     protected $fillable = [
@@ -22,4 +22,9 @@ class Project extends Model
         'age' => 'required',
         'type' => 'required'
     ];
+    public function getUserID()
+    {
+        return sprintf('Comp-%03d', $this->id);
+    }
+
 }
